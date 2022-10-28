@@ -1,8 +1,17 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import {BsArrowUpRight} from "react-icons/bs"
+import Aos from 'aos'
+import Login from '../component/Login'
+import 'aos/dist/aos.css' 
+import { useEffect, useState } from 'react'
 
 export default function Home() {
+  const [open, setOpen] = useState(false)
+  useEffect(() =>{
+    Aos.init({duration: 2000});
+}, []);
   return (
     <div className={styles.container}>
       <Head>
@@ -11,59 +20,49 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+       <div className={styles.header} data-aos="fade-right">
+             <div className={styles.round}>   
+                  <div className={styles.rounded1}></div>
+                  <div className={styles.rounded2}></div>
+            </div> 
+            <h1>umwella</h1>
+       </div>
+          {open ?<Login closeModal={setOpen}/>:""}
+          
+      <div className={styles.main}>
+        <h1>We are launching</h1>
+        <h1>soon</h1>
+        <p>if you urgently need a personalised meal plan,</p>
+        <button onClick={()=>{
+          setOpen(!open)
+        }}>Reach out to us <BsArrowUpRight style={{backgroundColor: "orangered"}}/></button>
+       </div>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+       <div className={styles.contain} style={{display: open ? "none": ""}}>
+         <div className={styles.circle}>
+          <div className={styles.image1}>
+          <Image
+          width={150}
+          height={150}
+          
+          src="/meal1.jpg"/>
+          </div>
+          <div className={styles.image2}>
+          <Image
+          width={150}
+          height={150}
+          
+          src="/meal2.jpg"/>
+          </div>
+          <div className={styles.image3}>
+          <Image
+          width={150}
+          height={150}
+          
+          src="/meal4.jpg"/>
+          </div>
+         </div>
+       </div>
     </div>
   )
 }
