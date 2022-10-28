@@ -1,12 +1,17 @@
-.container{
-    left: 30rem;
-    position: absolute;
+.container{  
     background-color:lightcyan;
     border: 1px solid black;
     padding: 3rem;
     width: 27rem;
     height: 37rem;
     border-radius: 20px;
+}
+.header{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 }
 .contain{
     display: flex;
@@ -19,11 +24,11 @@
 }
 
 .name input{
-    border-radius: 5px;
-    padding: 15px;
+    border-radius: 20px;
+    padding: 5px;
     background-color: aquamarine;
     outline: none;
-    font-size: 20px;
+    font-size: 15px;
     border: 1px solid aquamarine;
 }
 .dietary{
@@ -31,12 +36,12 @@
     flex-direction: column;
 }
 .dietary input{
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
     font-size: 20px;
     border: 1px solid aquamarine;
     outline: none;
     background-color: aquamarine;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .personal{
     display: flex;
@@ -46,11 +51,11 @@
     outline: none;
     border: 1px solid orangered; 
     background-color: orangered; 
-    padding: 15px;
+    padding: 5px;
     color: white;
     width: 20rem;
     font-size: 20px;
-    border-radius: 5px;
+    border-radius: 15px;
     margin: 5px;
     cursor: pointer;
 }
@@ -73,17 +78,27 @@
     display: flex;
     gap: 10px;
 }
-
+.out{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 
 @media screen and (orientation:portrait) {
     .container{
-        left: 0;
-        position: absolute;
         background-color:lightcyan;
         border: none;
          width: 27rem;
         height: 37rem;
         border-radius: 20px;
+        
+    }
+    .header{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding-bottom: 70px;
     }
     .contain{
         display: flex;
@@ -93,27 +108,28 @@
     .name{
         display: flex;
         flex-direction: column;
+        gap: 30px;
     }
     
     .name input{
-        border-radius: 5px;
-        padding: 15px;
-        background-color: aquamarine;
-        outline: none;
-        font-size: 20px;
-        border: 1px solid aquamarine;
+        border-radius: 20px;
+    padding: 5px;
+    background-color: aquamarine;
+    outline: none;
+    font-size: 15px;
+    border: 1px solid aquamarine;
     }
     .dietary{
         display: flex;
         flex-direction: column;
     }
     .dietary input{
-        padding-bottom: 4rem;
+        padding-bottom: 2rem;
         font-size: 20px;
         border: 1px solid aquamarine;
         outline: none;
         background-color: aquamarine;
-        border-radius: 5px;
+        border-radius: 10px;
     }
     .personal{
         display: flex;
@@ -123,11 +139,11 @@
         outline: none;
         border: 1px solid orangered; 
         background-color: orangered; 
-        padding: 15px;
+        padding: 5px;
         color: white;
         width: 20rem;
         font-size: 20px;
-        border-radius: 5px;
+        border-radius: 15px;
         margin: 5px;
         cursor: pointer;
     }

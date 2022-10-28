@@ -6,7 +6,7 @@ import {BsFacebook} from "react-icons/bs"
 function Login({closeModal}) {
     const [show, setShow] = useState(false)
   return (
-    <div className={style.header} >
+    <div className={style.header}>
         <div className={style.container} data-aos="fade-in">
 
        {show ?"":<div className={style.contain}>     
@@ -14,8 +14,9 @@ function Login({closeModal}) {
             <h3>Personlised Meal Plan</h3>
             <AiOutlineClose style={{cursor:"pointer"}} size="20px" onClick={()=> closeModal(false)}/>
         </div> 
-            <div>
+            
                 <form>
+                <div className={style.out}>
                     <div className={style.name}>
                         <label>First Name:</label>
                         <input type="text"/>
@@ -42,8 +43,9 @@ function Login({closeModal}) {
                     }}>
                     <button  type='submit'>Submit</button>
                     </div>
+                </div>
                 </form>
-            </div>
+            
     </div>}
 
                { show ? <div  className={style.compliment} data-aos="fade-in">
