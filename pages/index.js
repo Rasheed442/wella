@@ -38,6 +38,14 @@ export default function Home() {
         }}>Reach out to us <BsArrowUpRight style={{backgroundColor: "orangered"}}/></button>
        </div>
 
+       <div className={styles.meal}>
+         <Image
+         width={1300}
+         style={{color:"red"}}
+         height={400}
+         src='/mil.png' alt='/'/>
+       </div>
+{/* 
        <div className={styles.contain} style={{display: open ? "none": ""}}>
          <div className={styles.circle}>
           <div className={styles.image1}>
@@ -62,7 +70,7 @@ export default function Home() {
           src="/meal4.jpg"/>
           </div>
          </div>
-       </div>
+       </div> */}
     </div>
   )
 }

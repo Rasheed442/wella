@@ -74,14 +74,14 @@
     gap: 10px;
 }
 
+
 @media screen and (orientation:portrait) {
     .container{
         left: 0;
         position: absolute;
         background-color:lightcyan;
-        border: 1px solid black;
-        padding: 3rem;
-        width: 27rem;
+        border: none;
+         width: 27rem;
         height: 37rem;
         border-radius: 20px;
     }
