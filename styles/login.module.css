@@ -88,10 +88,10 @@
     .container{
         background-color:lightcyan;
         border: none;
-         width: 27rem;
-        height: 37rem;
+         width: 20rem;
+        height: 100%;
         border-radius: 20px;
-        
+        border: 1px solid black;
     }
     .header{
         position: absolute;
@@ -141,10 +141,9 @@
         background-color: orangered; 
         padding: 5px;
         color: white;
-        width: 20rem;
+        width: 15rem;
         font-size: 20px;
         border-radius: 15px;
-        margin: 5px;
         cursor: pointer;
     }
     .compliment{

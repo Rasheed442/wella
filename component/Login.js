@@ -5,6 +5,27 @@ import {AiOutlineClose, AiOutlineCheck, AiFillInstagram,AiFillTwitterCircle,
 import {BsFacebook} from "react-icons/bs"
 function Login({closeModal}) {
     const [show, setShow] = useState(false)
+    const [name, setName] = useState()
+    const [email, setEmail] = useState()
+    const [phone, setPhone] = useState()
+    const [dietary_needs, setDietary_needs] = useState()
+    const [specific_conditions, setSpecific_conditions] = useState()
+
+
+   const handler = async (e) => {
+        e.preventDefault();
+        const credential = { name,email,phone,dietary_needs,specific_conditions};
+
+        const response = await fetch ("https://x8ki-letl-twmt.n7.xano.io/api:oEREOWJG/lead", {
+            method: "POST",
+            headers: {"Content-Type":"application/json"},
+            body:  JSON.stringify(credential)
+        })
+        const data = await response.json();
+        console.log(data)
+        setShow(!show)
+
+    }
   return (
     <div className={style.header}>
         <div className={style.container} data-aos="fade-in">
@@ -15,32 +36,47 @@ function Login({closeModal}) {
             <AiOutlineClose style={{cursor:"pointer"}} size="20px" onClick={()=> closeModal(false)}/>
         </div> 
             
-                <form>
+                <form onSubmit={handler}>
                 <div className={style.out}>
                     <div className={style.name}>
                         <label>First Name:</label>
-                        <input type="text"/>
+                        <input
+                        value={name}
+                        onChange={(e)=> setName(e.target.value)}
+                        type="text"/>
                     </div>
                     <div className={style.name}>
                         <label>Email Address:</label>
-                        <input type="email"/>
+                        <input
+                         value={email}
+                         onChange={(e)=> setEmail(e.target.value)}
+                        type="email"/>
                     </div>
                     <div className={style.name}>
                         <label>Phone Number:</label>
-                        <input type="Phone number"/>
-                    </div>
-                    <div className={style.dietary}>
-                        <label>Dietary Needs:</label>
-                        <input type="text"/>
-                    </div>
-                    <div className={style.name}>
-                        <label>Specific Conditions:</label>
-                        <input type="text"/>
+                        <input 
+                         value={phone}
+                         onChange={(e)=> setPhone(e.target.value)}
+                        type="number"/>
                     </div>
 
-                    <div  className={style.submit} onClick={()=>{
-                        setShow(!show)
-                    }}>
+                    <div className={style.dietary}>
+                        <label>Dietary Needs:</label>
+                        <input
+                         value={dietary_needs}
+                         onChange={(e)=> setDietary_needs(e.target.value)}
+                        type="text"/>
+                    </div>
+
+                    <div className={style.name}>
+                        <label>Specific Conditions:</label>
+                        <input 
+                         value={specific_conditions}
+                         onChange={(e)=> setSpecific_conditions(e.target.value)}
+                        type="text"/>
+                    </div>
+
+                    <div  className={style.submit}>
                     <button  type='submit'>Submit</button>
                     </div>
                 </div>
@@ -56,6 +92,7 @@ function Login({closeModal}) {
                      <AiOutlineCheck size="90px" style={{backgroundColor:"green", color:"white", borderRadius:"50% "}}/>
                      <div className={style.thanks}>
                         <h1>Thank you!</h1>
+                        <h1>{name}</h1>
                         <h3>Kindly share with your Friends.</h3>
                         <div className={style.icon}>
                             <BsFacebook size="25px" style={{ color:"blue", borderRadius:"50% "}}/>

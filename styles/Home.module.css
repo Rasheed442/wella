@@ -35,11 +35,12 @@
 }
 .container{
   /* padding-bottom: 30px;
-  background-size: cover; */
-  background-image: url("/bg1.JPG");
-  width: 100vw;
-  height: 100vh;
   background-size: cover;
+  background-image: url("/bg1.JPG"); */
+  width: 100%;
+  background-color:lightcyan;
+  height: 100vh;
+  /* background-size: cover; */
   transition: 0.5s;
 }
 .main{
@@ -69,11 +70,11 @@
   border-radius: 20px;
   cursor: pointer;
 }
-.circle{
-  /* width: 70rem;
+/* .circle{
+  width: 70rem;
   height: 40rem;
   border: 100px solid green;
-  border-radius: 50%; */
+  border-radius: 50%;
   height: 20rem;
   width: 75rem;
   border-radius: 50%  / 100% 100% 0 0;
@@ -108,15 +109,14 @@
 }
 .image3 img{
   border-radius: 50%;
-}
+} */
 .meal{
   display: flex;
   justify-content: center;
-  padding-top: 70px;
+  padding-top: 70px;  background-color:lightcyan;
+
 }
-.meal img{
-  background-color:lightcyan;
-}
+
 
 
 
@@ -131,7 +131,7 @@
     border-radius: 10px 10px 50% 50%;
   }
   .meal img{
-  width: 30rem;
+  width: 100%;
   height: 10rem;
   background-color:lightcyan;
 }
