@@ -83,7 +83,7 @@ function Login({closeModal}) {
                     </div>
 
                     <div  className={style.submit}>
-                    <button  type='submit'>{loading ? <ClipLoader color={"red"} loading={loading}  size={20}/>:"Submit"}</button>
+                    <button  type='submit'>{loading ? <ClipLoader color={"white"} loading={loading}  size={20}/>:"Submit"}</button>
                     </div>
                     
                 </div>
@@ -96,11 +96,12 @@ function Login({closeModal}) {
                        <div className={style.close}>
                        <AiOutlineClose style={{cursor:"pointer"}} size="20px" onClick={()=> closeModal(false)}/>
                        </div>
-                     <AiOutlineCheck size="90px" style={{backgroundColor:"green", color:"white", borderRadius:"50% "}}/>
+                     <AiOutlineCheck size="40px" style={{backgroundColor:"green", color:"white", borderRadius:"50% "}}/>
+                    
                      <div className={style.thanks}>
                         <h1>Thank you!</h1>
                         <h1>{name}</h1>
-                        <h3>Kindly share with your Friends.</h3>
+                        <h3>Kindly share with your Friends.....</h3>
                         <div className={style.icon}>
                             <BsFacebook size="25px" style={{ color:"blue", borderRadius:"50% "}}/>
                             <AiFillInstagram size="25px" style={{ color:"red", borderRadius:"50% "}}/>
