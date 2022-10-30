@@ -36,8 +36,10 @@ function Login({closeModal}) {
 
        {show ?"":<div className={style.contain}>     
            <div className={style.personal}>
-            <h3>Personlised Meal Plan</h3>
+            <h3>Personlised Meal Plan </h3>
+            <div className={style.close}>
             <AiOutlineClose style={{cursor:"pointer"}} size="20px" onClick={()=> closeModal(false)}/>
+            </div>
         </div> 
             
                 <form onSubmit={handler}>
@@ -81,7 +83,7 @@ function Login({closeModal}) {
                     </div>
 
                     <div  className={style.submit}>
-                    <button  type='submit'>{loading ? <ClipLoader color={"red"} loading={loading}  size={50}/>:"Submit"}</button>
+                    <button  type='submit'>{loading ? <ClipLoader color={"red"} loading={loading}  size={20}/>:"Submit"}</button>
                     </div>
                     
                 </div>

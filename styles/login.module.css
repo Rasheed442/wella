@@ -47,6 +47,7 @@
     display: flex;
     gap: 90px;
 }
+.personal h3{color: green;}
 .submit button{
     outline: none;
     border: 1px solid orangered; 
@@ -141,7 +142,7 @@
         background-color: orangered; 
         padding: 5px;
         color: white;
-        width: 15rem;
+        width: 13rem;
         font-size: 20px;
         border-radius: 15px;
         cursor: pointer;
