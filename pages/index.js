@@ -22,11 +22,15 @@ export default function Home() {
       </Head>
 
        <div className={styles.header} data-aos="fade-right">
-             <div className={styles.round}>   
+             {/* <div className={styles.round}>   
                   <div className={styles.rounded1}></div>
                   <div className={styles.rounded2}></div>
             </div> 
-            <h1>umwella</h1>
+            <h1>umwella</h1> */}
+            <Image
+            height={50}
+            width={150}
+            src="/well.png"/>
        </div>
           {open ?<Login closeModal={setOpen}/>:""}
           
@@ -44,7 +48,7 @@ export default function Home() {
          priority
          width={1300}
          style={{color:"red"}}
-         height={400}
+         height={500}
          src='/mil.png' alt='/'/>
        </div>
 {/* 

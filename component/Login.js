@@ -3,7 +3,10 @@ import style from '../styles/login.module.css'
 import {AiOutlineClose, AiOutlineCheck, AiFillInstagram,AiFillTwitterCircle,
     AiFillLinkedin,AiOutlineWhatsApp} from "react-icons/ai"
 import {BsFacebook} from "react-icons/bs"
+import ClipLoader from "react-spinners/ClipLoader"
+
 function Login({closeModal}) {
+    const [loading, setLoading] = useState();
     const [show, setShow] = useState(false)
     const [name, setName] = useState()
     const [email, setEmail] = useState()
@@ -14,6 +17,7 @@ function Login({closeModal}) {
 
    const handler = async (e) => {
         e.preventDefault();
+        setLoading(true)
         const credential = { name,email,phone,dietary_needs,specific_conditions};
 
         const response = await fetch ("https://x8ki-letl-twmt.n7.xano.io/api:oEREOWJG/lead", {
@@ -77,8 +81,9 @@ function Login({closeModal}) {
                     </div>
 
                     <div  className={style.submit}>
-                    <button  type='submit'>Submit</button>
+                    <button  type='submit'>{loading ? <ClipLoader color={"red"} loading={loading}  size={50}/>:"Submit"}</button>
                     </div>
+                    
                 </div>
                 </form>
             
